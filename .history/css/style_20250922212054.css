@@ -1,0 +1,23 @@
+:root {
+    --background-dark: #1a1a1a; /* Um carvão escuro, como na paleta */
+    --text-light: #FDF8F0;      /* Um branco suave para o texto */
+    
+    --purple-deep: #673AB7;
+    --purple-vibrant: #9C27B0;
+    --neon-pink: #EA91E3;
+    --energetic-pop: #FDF880;
+    --accent-muted: #CC043B;
+
+    /* Nomes de fontes que podemos usar */
+    --font-display: 'Monoton', cursive; /* Para títulos néon */
+    --font-body: 'Roboto', sans-serif;  /* Para textos normais */
+}
+
+/* Aplicar o básico ao body que já tínhamos */
+body {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+}
