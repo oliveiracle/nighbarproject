@@ -1,3 +1,67 @@
+/* =========================
+   GALLERY EXTERNAL ARROWS
+   ========================= */
+.gallery-arrows-external {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 32px;
+     margin-top: 18px;
+     margin-bottom: 8px;
+     position: relative;
+     z-index: 2;
+}
+.gallery-arrows-external .gallery-arrow {
+     background: rgba(24,16,40,0.85);
+     color: var(--energetic-pop);
+     font-size: 2.8rem;
+     border-radius: 50%;
+     border: 2px solid var(--neon-pink);
+     box-shadow: 0 0 12px var(--neon-pink);
+     width: 54px;
+     height: 54px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     transition: background 0.2s, color 0.2s, transform 0.2s;
+     user-select: none;
+     opacity: 0.92;
+}
+.gallery-arrows-external .gallery-arrow:hover {
+     background: var(--neon-pink);
+     color: var(--background-dark);
+     transform: scale(1.12) rotate(-6deg);
+     box-shadow: 0 0 24px var(--neon-pink);
+}
+/* Only show the correct arrows for each slide */
+#slide1:checked ~ .gallery-arrows-external #arrow-left-1,
+#slide1:checked ~ .gallery-arrows-external #arrow-right-1,
+#slide2:checked ~ .gallery-arrows-external #arrow-left-2,
+#slide2:checked ~ .gallery-arrows-external #arrow-right-2,
+#slide3:checked ~ .gallery-arrows-external #arrow-left-3,
+#slide3:checked ~ .gallery-arrows-external #arrow-right-3,
+#slide4:checked ~ .gallery-arrows-external #arrow-left-4,
+#slide4:checked ~ .gallery-arrows-external #arrow-right-4,
+#slide5:checked ~ .gallery-arrows-external #arrow-left-5,
+#slide5:checked ~ .gallery-arrows-external #arrow-right-5,
+#slide6:checked ~ .gallery-arrows-external #arrow-left-6,
+#slide6:checked ~ .gallery-arrows-external #arrow-right-6 {
+     display: flex;
+}
+.gallery-arrows-external .gallery-arrow {
+     display: none;
+}
+@media (max-width: 900px) {
+     .gallery-arrows-external .gallery-arrow {
+          font-size: 2.1rem;
+          width: 40px;
+          height: 40px;
+     }
+     .gallery-arrows-external {
+          gap: 18px;
+     }
+}
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
