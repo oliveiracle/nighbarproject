@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes JS - Street66</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="css/images/logo.png" alt="Logo Street66" class="header-neon-logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="events.html">Eventos</a></li>
+                    <li><a href="gallery.html">Galeria</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main style="min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1>Testes de JavaScript</h1>
+        <p>Use esta página para experimentar scripts JS sem afetar o site principal.</p>
+        <button id="js-test-btn">Clique para testar JS</button>
+        <div id="js-test-result" style="margin-top: 20px; font-size: 1.2em;"></div>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <img src="css/images/logo.png" alt="Logo Street66" class="footer-logo-img">
+            <div class="footer-info">
+                <p>Rua Exemplo, 123 - Centro, Cidade</p>
+                <p>&copy; 2025 Street66 Bar</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><img src="css/images/instagram.png" alt="Instagram" class="social-icon-img"></a>
+                <a href="#"><img src="css/images/facebook.png" alt="Facebook" class="social-icon-img"></a>
+                <a href="#"><img src="css/images/whatsapp.png" alt="WhatsApp" class="social-icon-img"></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('js-test-btn').addEventListener('click', function() {
+            document.getElementById('js-test-result').textContent = 'JS funcionando! (' + new Date().toLocaleString() + ')';
+        });
+    </script>
+</body>
+</html>

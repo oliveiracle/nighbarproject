@@ -1,0 +1,131 @@
+:root {
+    --background-dark: #1a1a1a; /* Dark charcoal, as in the palette */
+    --text-light: #FDF8F0;      /* Soft white for text */
+    
+    --purple-deep: #673AB7;
+    --purple-vibrant: #9C27B0;
+    --neon-pink: #EA91E3;
+    --energetic-pop: #FDF880;
+    --accent-muted: #CC043B;
+
+    /* Font names we can use */
+    --font-display: 'Monoton', cursive; /* For neon titles */
+    --font-body: 'Roboto', sans-serif;  /* For normal text */
+}
+
+/* Apply the basics to body that we already had */
+body {
+    /* Fallback color that shows while the image is loading */
+    background-color: #1a1a1a; 
+    
+    /* The path to your new image */
+    background-image: url('images/pexels-orlandoallo-2273488.jpg');
+    
+    /* The Magic Happens Here */
+    background-size: cover; /* Makes the image cover the entire area without distortion */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place as the page scrolls */
+
+    /* The rest of the styles */
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+   
+}
+
+/* --- HEADER STYLE --- */
+
+.main-header {
+    background-color: #000; /* Black background for the header */
+    padding: 15px 0; /* Vertical padding */
+    border-bottom: 1px solid var(--purple-vibrant); /* Subtle neon line at the bottom */
+}
+
+.header-container {
+    width: 90%; /* Content doesn't go edge to edge */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center the container */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space items: logo left, nav center, icons right */
+    align-items: center; /* Vertically center everything */
+}
+
+/* --- LOGO STYLE --- */
+.logo {
+    font-family: var(--font-display); /* Neon font */
+    font-size: 28px;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid var(--purple-vibrant);
+    padding: 10px 15px;
+    border-radius: 5px;
+    
+    /* Neon Glow Effect */
+    box-shadow: 0 0 5px var(--purple-vibrant), 0 0 10px var(--purple-vibrant);
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    
+    display: flex;
+    flex-direction: column; /* Puts "BAR" below "STREET 66" */
+    align-items: center;
+    line-height: 1;
+}
+
+.logo span {
+    font-family: var(--font-body); /* Normal font for "BAR" */
+    font-size: 14px;
+    color: var(--neon-pink);
+    letter-spacing: 2px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* --- NAVIGATION STYLE --- */
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Remove list bullets */
+    display: flex; /* Align menu items */
+    gap: 30px; /* Space between menu items */
+}
+
+.main-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.main-nav a:hover {
+    color: var(--neon-pink);
+    text-shadow: 0 0 8px var(--neon-pink); /* Glow effect on hover */
+}
+
+/* --- SOCIAL ICONS STYLE --- */
+.social-icons {
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 18px;
+    border: 2px solid var(--purple-deep);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Perfect circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.social-icons a:hover {
+    color: var(--neon-pink);
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 10px var(--neon-pink); /* Glow on hover */
+    transform: scale(1.1); /* Subtle zoom effect */
+}
