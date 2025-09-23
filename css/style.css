@@ -1,3 +1,54 @@
+/* =========================
+    IMPORTS & FONTS
+   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* =========================
+
+
+
+
+
+
+
+
+/* HERO SPOTIFY PLAYER */
+.hero-spotify-player {
+     margin: 1.5rem auto 0 auto;
+     max-width: 380px;
+     border-radius: 18px;
+     box-shadow: 0 0 24px 4px #00fff7cc, 0 0 8px 2px #ff00cc99, 0 0 2px 1px #fff200cc;
+     background: linear-gradient(90deg, #18122b 0%, #2a1a40 100%);
+     padding: 10px 10px 6px 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.hero-spotify-player iframe {
+     border-radius: 12px;
+     border: 2px solid #00fff7;
+     box-shadow: 0 0 12px 2px #00fff7cc, 0 0 4px 1px #ff00cc99;
+     background: #18122b;
+}
+
+/* MINI CTA BUTTON */
+.cta-button.cta-button--mini {
+     padding: 0.45rem 1.2rem;
+     font-size: 0.95rem;
+     border-radius: 22px;
+     margin-top: 0.5rem;
+     margin-bottom: 0.2rem;
+     box-shadow: 0 0 8px 2px #ff00cc80, 0 0 2px 1px #00fff799;
+     letter-spacing: 1.2px;
+}
+.cta-button.cta-button--mini:hover, .cta-button.cta-button--mini:focus {
+     box-shadow: 0 0 16px 4px #ff00cc, 0 0 4px 1px #00fff7;
+     color: #fff200;
+     border: 2px solid #ff00cc;
+     transform: scale(1.04) rotate(-1deg);
+}
 
 
 /* =========================
@@ -168,16 +219,28 @@ body {
 }
 .cta-button {
      display: inline-block;
-     padding: 15px 30px;
-     background: linear-gradient(45deg, var(--purple-deep), var(--purple-vibrant));
-     color: var(--text-light);
-     text-decoration: none;
-     font-weight: bold;
-     border-radius: 25px;
-     transition: all 0.3s ease;
-     text-transform: uppercase;
+     margin-top: 2rem;
+     padding: 0.75rem 2.5rem;
+     font-family: 'Montserrat', sans-serif;
+     font-size: 1.2rem;
+     font-weight: 700;
+     color: #fff;
+     background: linear-gradient(90deg, var(--purple-deep) 0%, var(--purple-vibrant) 100%);
+     border: none;
+     border-radius: 40px;
+     box-shadow: 0 0 16px 2px #ff00cc80;
      letter-spacing: 2px;
+     text-transform: uppercase;
+     text-decoration: none;
+     transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+     cursor: pointer;
 }
+ .cta-button:hover, .cta-button:focus {
+     background: linear-gradient(90deg, var(--purple-vibrant) 0%, var(--purple-deep) 100%);
+     box-shadow: 0 0 32px 4px #ff00cc, 0 0 8px 2px #00fff7;
+     color: #fff200;
+     transform: scale(1.05) rotate(-1deg);
+ }
 .cta-button:hover {
      transform: translateY(-2px);
      box-shadow: 0 10px 20px rgba(156, 39, 176, 0.4);
@@ -186,6 +249,26 @@ body {
      transform: translateY(-2px);
      box-shadow: 0 5px 15px rgba(204, 4, 59, 0.4);
 }
+/*
+.cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(156, 39, 176, 0.4);
+}
+.button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(204, 4, 59, 0.4);
+}
+*/
+/*
+.cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(156, 39, 176, 0.4);
+}
+.button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(204, 4, 59, 0.4);
+}
+*/
 
 /* =========================
     TWO WORLDS SECTION
