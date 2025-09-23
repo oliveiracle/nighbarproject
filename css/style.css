@@ -451,6 +451,48 @@ body {
      transform: translateY(-3px) scale(1.04);
 }
 
+/* Card 3 - Board Games */
+.event-boardgames {
+     width: 150px !important;
+     height: 150px !important;
+     border-radius: 50%;
+     object-fit: cover;
+     box-shadow: 0 0 24px var(--neon-pink), 0 0 8px var(--purple-vibrant);
+     border: 4px solid var(--neon-pink);
+     background: #181028;
+     margin-bottom: 16px;
+     transition: transform 0.2s;
+     cursor: pointer;
+}
+.event-boardgames:active {
+     transform: scale(1.13) rotate(-8deg);
+     box-shadow: 0 0 36px var(--neon-pink), 0 0 16px var(--purple-vibrant);
+}
+#event-boardgames {
+    height: 170px !important; /* Here is Where I Adjust the Height */
+     display: inline-block;
+     background: linear-gradient(45deg, var(--purple-vibrant), var(--neon-pink));
+     color: var(--text-light);
+     padding: 34px 20px;
+     text-decoration: none;
+     border-radius: 25px;
+     font-weight: bold;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     box-shadow: 0 0 18px var(--neon-pink), 0 4px 18px rgba(156,39,176,0.25);
+     position: relative;
+     overflow: hidden;
+     font-family: var(--font-body);
+     font-size: 1rem;
+     transition: all 0.3s ease;
+}
+#event-boardgames:hover {
+     background: linear-gradient(45deg, var(--neon-pink), var(--energetic-pop));
+     color: var(--background-dark);
+     box-shadow: 0 0 24px var(--neon-pink), 0 8px 24px rgba(234,145,227,0.3);
+     transform: translateY(-3px) scale(1.04);
+}
+
 
 
 
