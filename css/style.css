@@ -1083,17 +1083,18 @@ body {
           gap: 18px;
           margin-top: 18px;
      }
-     .menu-hamburger {
-          display: flex;
-          position: fixed;
-          margin-top: 40px;
-          top: 24px;
-          left: 24px;
-          background: rgba(24, 16, 40, 0.92);
-          border-radius: 50%;
-          box-shadow: 0 0 18px var(--neon-pink), 0 2px 8px var(--purple-vibrant);
-          transition: box-shadow 0.3s;
-     }
+                    .menu-hamburger {
+                         display: flex;
+                         position: absolute;
+                         top: 48px;
+                         left: 24px;
+                         margin-top: 0;
+                         background: rgba(24, 16, 40, 0.92);
+                         border-radius: 50%;
+                         box-shadow: 0 0 18px var(--neon-pink), 0 2px 8px var(--purple-vibrant);
+                         transition: box-shadow 0.3s;
+                         z-index: 2000;
+                    }
      .menu-hamburger:hover {
           box-shadow: 0 0 32px var(--neon-pink), 0 4px 16px var(--purple-vibrant);
           background: rgba(234, 145, 227, 0.12);
