@@ -1,10 +1,109 @@
-/* =========================
-    IMPORTS & ROOT VARIABLES
-    ========================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+
+/* =========================
+   CONTACT PAGE STYLES
+   ========================= */
+.contact-hero {
+     text-align: center;
+     padding: 60px 10px 30px;
+}
+.contact-hero h1 {
+     font-family: var(--font-display);
+     color: var(--neon-pink);
+     font-size: 2.5rem;
+     text-shadow: 0 0 12px var(--neon-pink);
+}
+.contact-hero p {
+     font-family: var(--font-body);
+     color: #fff;
+     font-size: 1.1rem;
+     max-width: 600px;
+     margin: 0 auto;
+}
+.contact-content {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 40px;
+     max-width: 1100px;
+     margin: 0 auto 60px;
+}
+.contact-map {
+     flex: 1 1 320px;
+     min-width: 320px;
+     max-width: 480px;
+}
+.contact-map iframe {
+     width: 100%;
+     height: 320px;
+     border: 0;
+     border-radius: 18px;
+     box-shadow: 0 0 18px var(--purple-vibrant);
+}
+.contact-map-link {
+     margin-top: 10px;
+     text-align: center;
+}
+.contact-map-link a {
+     color: var(--neon-pink);
+     text-decoration: underline;
+     font-family: var(--font-nav);
+}
+.contact-form-container {
+     flex: 1 1 320px;
+     min-width: 320px;
+     max-width: 480px;
+     background: rgba(24,16,40,0.92);
+     border-radius: 18px;
+     box-shadow: 0 0 18px var(--purple-vibrant);
+     padding: 24px 18px;
+}
+.contact-form {
+     display: flex;
+     flex-direction: column;
+     gap: 14px;
+}
+.contact-form h2 {
+     font-family: var(--font-display);
+     color: var(--energetic-pop);
+     font-size: 1.5rem;
+     margin-bottom: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+     padding: 10px;
+     border-radius: 8px;
+     border: none;
+     font-size: 1rem;
+     font-family: var(--font-body);
+}
+.contact-form textarea {
+     resize: vertical;
+}
+.contact-form button.cta-button {
+     margin-top: 10px;
+}
+.contact-review-link {
+     margin-top: 18px;
+     text-align: center;
+}
+.contact-review-link a {
+     color: var(--energetic-pop);
+     text-decoration: underline;
+     font-family: var(--font-nav);
+     font-size: 1.1rem;
+}
+/* =========================
+    IMPORTS & ROOT VARIABLES
+    ========================= */
+
+
 
 :root {
      --background-dark: #1a1a1a;    
