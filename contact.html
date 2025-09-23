@@ -63,10 +63,10 @@
 
             <!-- Contact/Booking Form -->
             <div class="contact-form-container" style="flex:1 1 320px; min-width:320px; max-width:480px; background:rgba(24,16,40,0.92); border-radius:18px; box-shadow:0 0 18px var(--purple-vibrant); padding:24px 18px;">
-                <form class="contact-form" name="booking" method="POST" data-netlify="true" style="display:flex; flex-direction:column; gap:14px;">
+                <form class="contact-form" name="booking" method="POST" action="mailto:bookings@street66dublin.com" enctype="text/plain" style="display:flex; flex-direction:column; gap:14px;">
                     <h2 style="font-family:var(--font-display); color:var(--energetic-pop); font-size:1.5rem; margin-bottom:10px;">Book a Table / Send a Query</h2>
                     <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
-                    <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
+                    <input type="email" name="email" placeholder="Your Email (for reply)" required style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
                     <input type="tel" name="phone" placeholder="Phone (optional)" style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
                     <input type="date" name="date" placeholder="Booking Date (optional)" style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
                     <input type="number" name="guests" placeholder="Number of Guests (optional)" min="1" max="30" style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
