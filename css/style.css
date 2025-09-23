@@ -1,6 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Hide header social icons and show in footer on mobile */
 @media (max-width: 900px) {
@@ -220,7 +220,7 @@
     background: #2a0a2a;
 }
 /* --- IMPORTS & ROOT VARIABLES --- */
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 :root {
     --background-dark: #1a1a1a;
@@ -295,6 +295,7 @@ body {
     font-weight: bold;
     padding-bottom: 5px;
     transition: all 0.3s ease;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 .main-nav a:hover {
     color: var(--neon-pink);
@@ -465,6 +466,7 @@ body {
     margin-bottom: 25px;
     font-size: 1.1rem;
     flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
 /* Diferenciação visual entre os cards */
