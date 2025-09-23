@@ -47,7 +47,6 @@
     .menu-hamburger {
         display: flex;
         position: fixed;
-        margin-top: 40px; /*Adjusted to avoid overlap with logo*/
         top: 24px;
         left: 24px;
         background: rgba(24, 16, 40, 0.92);
@@ -83,6 +82,7 @@
         backdrop-filter: blur(8px) saturate(140%);
     }
     .main-nav ul {
+        margin-top: 20px;
         gap: 36px;
     }
     .main-nav a {
