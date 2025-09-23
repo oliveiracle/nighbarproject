@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="css/images/favicon.png">
+    <title>Contact | Street 66 Bar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Contact Street 66 Bar for table bookings, questions, and more. Find us on the map, leave a review, or get in touch!">
+</head>
+<body>
+    <!-- HEADER (copied from index.html) -->
+    <header class="main-header">
+        <div class="header-container">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open navigation menu" />
+            <label for="menu-toggle" class="menu-hamburger" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <div class="logo">
+                <div class="logo-img-container">
+                    <img src="css/images/logo1.png" alt="Street 66 Bar Logo" class="header-neon-logo">
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@street66bar" target="_blank" rel="noopener">
+                    <img src="css/images/tw.png" alt="TikTok" class="social-icon-img">
+                </a>
+                <a href="https://www.instagram.com/street66dublin/?hl=en" target="_blank" rel="noopener">
+                    <img src="css/images/ig.png" alt="Instagram" class="social-icon-img">
+                </a>
+                <a href="https://www.facebook.com/street66Dublin/" target="_blank" rel="noopener">
+                    <img src="css/images/fb.png" alt="Facebook" class="social-icon-img">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-hero" style="text-align:center; padding:60px 10px 30px;">
+            <h1 style="font-family: var(--font-display); color: var(--neon-pink); font-size:2.5rem; text-shadow:0 0 12px var(--neon-pink);">Contact & Find Us</h1>
+            <p style="font-family: var(--font-body); color:#fff; font-size:1.1rem; max-width:600px; margin:0 auto;">Book a table, ask a question, or just say hi! We're here to help you make your night unforgettable at Street 66 Bar.</p>
+        </section>
+
+        <section class="contact-content" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; max-width:1100px; margin:0 auto 60px;">
+            <!-- Google Maps Embed -->
+            <div class="contact-map" style="flex:1 1 320px; min-width:320px; max-width:480px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.928299996132!2d-6.2701322232330625!3d53.344539672288775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e9d44daed61%3A0xf0b8ac76ab627d66!2sStreet%2066!5e0!3m2!1sen!2sie!4v1758593608394!5m2!1sen!2sie" width="100%" height="320" style="border:0; border-radius:18px; box-shadow:0 0 18px var(--purple-vibrant);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div style="margin-top:10px; text-align:center;">
+                    <a href="https://www.google.com/maps/place/Street+66/@53.3445397,-6.2701322,17z" target="_blank" rel="noopener" style="color:var(--neon-pink); text-decoration:underline; font-family:var(--font-nav);">Open in Google Maps</a>
+                </div>
+            </div>
+
+            <!-- Contact/Booking Form -->
+            <div class="contact-form-container" style="flex:1 1 320px; min-width:320px; max-width:480px; background:rgba(24,16,40,0.92); border-radius:18px; box-shadow:0 0 18px var(--purple-vibrant); padding:24px 18px;">
+                <form class="contact-form" name="booking" method="POST" data-netlify="true" style="display:flex; flex-direction:column; gap:14px;">
+                    <h2 style="font-family:var(--font-display); color:var(--energetic-pop); font-size:1.5rem; margin-bottom:10px;">Book a Table / Send a Query</h2>
+                    <input type="text" name="name" placeholder="Your Name" required style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
+                    <input type="email" name="email" placeholder="Your Email" required style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
+                    <input type="tel" name="phone" placeholder="Phone (optional)" style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
+                    <input type="date" name="date" placeholder="Booking Date (optional)" style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
+                    <input type="number" name="guests" placeholder="Number of Guests (optional)" min="1" max="30" style="padding:10px; border-radius:8px; border:none; font-size:1rem;">
+                    <textarea name="message" placeholder="Your message or special request" rows="3" style="padding:10px; border-radius:8px; border:none; font-size:1rem;"></textarea>
+                    <button type="submit" class="cta-button" style="margin-top:10px;">Send</button>
+                </form>
+                <div style="margin-top:18px; text-align:center;">
+                    <a href="https://g.page/r/CQw1Qw1Qw1QwEAI/review" target="_blank" rel="noopener" style="color:var(--energetic-pop); text-decoration:underline; font-family:var(--font-nav); font-size:1.1rem;">Leave us a Google Review</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (copied from index.html) -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2025 Street 66 Bar. All rights reserved.</p>
+                <p>16-17 Parliament St, Temple Bar, Dublin, Ireland</p>
+            </div>
+            <div class="footer-dev" style="margin-top:12px; text-align:center; font-size:0.98em; opacity:0.85;">
+                <span>Website developed by 
+                    <a href="https://www.instagram.com/oliveiraacle/?hl=en" target="_blank" rel="noopener" style="color:#EA91E3; text-decoration:underline;">@oliveiraacle</a>
+                    <span style="margin-left:8px; color:#FDF880;">WhatsApp: <a href="https://wa.me/353862727181" target="_blank" rel="noopener" style="color:#FDF880; text-decoration:underline;">+353 086 272 71 81</a></span>
+                </span>
+            </div>
+        </div>
+        <div class="footer-container">
+            <div class="footer-social-mobile">
+                <a href="https://www.tiktok.com/@street66bar" target="_blank" rel="noopener">
+                    <img src="css/images/tw.png" alt="TikTok" class="social-icon-img">
+                </a>
+                <a href="https://www.instagram.com/street66dublin/?hl=en" target="_blank" rel="noopener">
+                    <img src="css/images/ig.png" alt="Instagram" class="social-icon-img">
+                </a>
+                <a href="https://www.facebook.com/street66Dublin/" target="_blank" rel="noopener">
+                    <img src="css/images/fb.png" alt="Facebook" class="social-icon-img">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
