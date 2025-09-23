@@ -125,6 +125,7 @@
             transform: translateY(0);
         }
     }
+    }
     .main-nav ul {
         flex-direction: column;
         gap: 24px;
