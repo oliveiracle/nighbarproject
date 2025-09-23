@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="description" content="See the best moments and atmosphere of Street 66 Bar in our photo gallery.">
 </head>
-<body>
+<body class="gallery-bg">
     <!-- HEADER (same as index/contact) -->
     <header class="main-header">
         <div class="header-container">
@@ -53,12 +53,22 @@
         </section>
         <section class="gallery-slider-section">
             <div class="gallery-slider">
+                <!-- 15 slides, radios, modals, and navigation for all images -->
                 <input type="radio" name="gallery" id="slide1" checked>
                 <input type="radio" name="gallery" id="slide2">
                 <input type="radio" name="gallery" id="slide3">
                 <input type="radio" name="gallery" id="slide4">
                 <input type="radio" name="gallery" id="slide5">
                 <input type="radio" name="gallery" id="slide6">
+                <input type="radio" name="gallery" id="slide7">
+                <input type="radio" name="gallery" id="slide8">
+                <input type="radio" name="gallery" id="slide9">
+                <input type="radio" name="gallery" id="slide10">
+                <input type="radio" name="gallery" id="slide11">
+                <input type="radio" name="gallery" id="slide12">
+                <input type="radio" name="gallery" id="slide13">
+                <input type="radio" name="gallery" id="slide14">
+                <input type="radio" name="gallery" id="slide15">
                 <div class="gallery-slides">
                     <div class="gallery-slide slide1">
                         <a href="#zoom1" class="gallery-zoom-btn">🔍 zoom</a>
@@ -84,35 +94,61 @@
                         <a href="#zoom6" class="gallery-zoom-btn">🔍 zoom</a>
                         <img src="css/images/gallery/510034979_3236389493167269_8599373852009127202_n.jpg" alt="Fun at Street 66 Bar 6">
                     </div>
-                    <!-- Fullscreen modals -->
-                    <div id="zoom1" class="gallery-modal">
-                        <a href="#" class="gallery-modal-close">&times;</a>
-                        <img src="css/images/gallery/481903827_1417680125869822_5391643869720132358_n (1).jpg" alt="Fun at Street 66 Bar 1">
+                    <div class="gallery-slide slide7">
+                        <a href="#zoom7" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/487462460_1437778667193301_8799167309488264491_n.jpg" alt="Fun at Street 66 Bar 7">
                     </div>
-                    <div id="zoom2" class="gallery-modal">
-                        <a href="#" class="gallery-modal-close">&times;</a>
-                        <img src="css/images/gallery/482267965_1417680145869820_9211153481739201868_n.jpg" alt="Fun at Street 66 Bar 2">
+                    <div class="gallery-slide slide8">
+                        <a href="#zoom8" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (2).jpg" alt="Fun at Street 66 Bar 8">
                     </div>
-                    <div id="zoom3" class="gallery-modal">
-                        <a href="#" class="gallery-modal-close">&times;</a>
-                        <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (1).jpg" alt="Fun at Street 66 Bar 3">
+                    <div class="gallery-slide slide9">
+                        <a href="#zoom9" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/487792112_1438886590415842_1966670830959891633_n.jpg" alt="Fun at Street 66 Bar 9">
                     </div>
-                    <div id="zoom4" class="gallery-modal">
-                        <a href="#" class="gallery-modal-close">&times;</a>
-                        <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n.jpg" alt="Fun at Street 66 Bar 4">
+                    <div class="gallery-slide slide10">
+                        <a href="#zoom10" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/488017321_1437494747221693_1340412147082313578_n.jpg" alt="Fun at Street 66 Bar 10">
                     </div>
-                    <div id="zoom5" class="gallery-modal">
-                        <a href="#" class="gallery-modal-close">&times;</a>
-                        <img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n.jpg" alt="Fun at Street 66 Bar 5">
+                    <div class="gallery-slide slide11">
+                        <a href="#zoom11" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n (1).jpg" alt="Fun at Street 66 Bar 11">
                     </div>
-                    <div id="zoom6" class="gallery-modal">
-                        <a href="#" class="gallery-modal-close">&times;</a>
-                        <img src="css/images/gallery/510034979_3236389493167269_8599373852009127202_n.jpg" alt="Fun at Street 66 Bar 6">
+                    <div class="gallery-slide slide12">
+                        <a href="#zoom12" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/488217405_1439705917000576_7242053845707404504_n.jpg" alt="Fun at Street 66 Bar 12">
                     </div>
+                    <div class="gallery-slide slide13">
+                        <a href="#zoom13" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/488861292_1443178829986618_6472122392835636950_n.jpg" alt="Fun at Street 66 Bar 13">
+                    </div>
+                    <div class="gallery-slide slide14">
+                        <a href="#zoom14" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/488904812_1441028286868339_5242781180593017509_n.jpg" alt="Fun at Street 66 Bar 14">
+                    </div>
+                    <div class="gallery-slide slide15">
+                        <a href="#zoom15" class="gallery-zoom-btn">🔍 zoom</a>
+                        <img src="css/images/gallery/489040095_1443554853282349_4191832262629036408_n.jpg" alt="Fun at Street 66 Bar 15">
+                    </div>
+                    <!-- Fullscreen modals for all images -->
+                    <div id="zoom1" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/481903827_1417680125869822_5391643869720132358_n (1).jpg" alt="Fun at Street 66 Bar 1"></div>
+                    <div id="zoom2" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/482267965_1417680145869820_9211153481739201868_n.jpg" alt="Fun at Street 66 Bar 2"></div>
+                    <div id="zoom3" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (1).jpg" alt="Fun at Street 66 Bar 3"></div>
+                    <div id="zoom4" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n.jpg" alt="Fun at Street 66 Bar 4"></div>
+                    <div id="zoom5" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n.jpg" alt="Fun at Street 66 Bar 5"></div>
+                    <div id="zoom6" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/510034979_3236389493167269_8599373852009127202_n.jpg" alt="Fun at Street 66 Bar 6"></div>
+                    <div id="zoom7" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/487462460_1437778667193301_8799167309488264491_n.jpg" alt="Fun at Street 66 Bar 7"></div>
+                    <div id="zoom8" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (2).jpg" alt="Fun at Street 66 Bar 8"></div>
+                    <div id="zoom9" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/487792112_1438886590415842_1966670830959891633_n.jpg" alt="Fun at Street 66 Bar 9"></div>
+                    <div id="zoom10" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/488017321_1437494747221693_1340412147082313578_n.jpg" alt="Fun at Street 66 Bar 10"></div>
+                    <div id="zoom11" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n (1).jpg" alt="Fun at Street 66 Bar 11"></div>
+                    <div id="zoom12" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/488217405_1439705917000576_7242053845707404504_n.jpg" alt="Fun at Street 66 Bar 12"></div>
+                    <div id="zoom13" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/488861292_1443178829986618_6472122392835636950_n.jpg" alt="Fun at Street 66 Bar 13"></div>
+                    <div id="zoom14" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/488904812_1441028286868339_5242781180593017509_n.jpg" alt="Fun at Street 66 Bar 14"></div>
+                    <div id="zoom15" class="gallery-modal"><a href="#" class="gallery-modal-close">&times;</a><img src="css/images/gallery/489040095_1443554853282349_4191832262629036408_n.jpg" alt="Fun at Street 66 Bar 15"></div>
                 </div>
-                <!-- Arrows inside the photo removed as requested -->
                 <div class="gallery-arrows gallery-arrows-external">
-                    <label for="slide6" class="gallery-arrow gallery-arrow-left" id="arrow-left-1">&#8592;</label>
+                    <label for="slide15" class="gallery-arrow gallery-arrow-left" id="arrow-left-1">&#8592;</label>
                     <label for="slide2" class="gallery-arrow gallery-arrow-right" id="arrow-right-1">&#8594;</label>
                     <label for="slide1" class="gallery-arrow gallery-arrow-left" id="arrow-left-2">&#8592;</label>
                     <label for="slide3" class="gallery-arrow gallery-arrow-right" id="arrow-right-2">&#8594;</label>
@@ -123,7 +159,26 @@
                     <label for="slide4" class="gallery-arrow gallery-arrow-left" id="arrow-left-5">&#8592;</label>
                     <label for="slide6" class="gallery-arrow gallery-arrow-right" id="arrow-right-5">&#8594;</label>
                     <label for="slide5" class="gallery-arrow gallery-arrow-left" id="arrow-left-6">&#8592;</label>
-                    <label for="slide1" class="gallery-arrow gallery-arrow-right" id="arrow-right-6">&#8594;</label>
+                    <label for="slide7" class="gallery-arrow gallery-arrow-right" id="arrow-right-6">&#8594;</label>
+                    <label for="slide6" class="gallery-arrow gallery-arrow-left" id="arrow-left-7">&#8592;</label>
+                    <label for="slide8" class="gallery-arrow gallery-arrow-right" id="arrow-right-7">&#8594;</label>
+                    <label for="slide7" class="gallery-arrow gallery-arrow-left" id="arrow-left-8">&#8592;</label>
+                    <label for="slide9" class="gallery-arrow gallery-arrow-right" id="arrow-right-8">&#8594;</label>
+                    <label for="slide8" class="gallery-arrow gallery-arrow-left" id="arrow-left-9">&#8592;</label>
+                    <label for="slide10" class="gallery-arrow gallery-arrow-right" id="arrow-right-9">&#8594;</label>
+                    <label for="slide9" class="gallery-arrow gallery-arrow-left" id="arrow-left-10">&#8592;</label>
+                    <label for="slide11" class="gallery-arrow gallery-arrow-right" id="arrow-right-10">&#8594;</label>
+                    <label for="slide10" class="gallery-arrow gallery-arrow-left" id="arrow-left-11">&#8592;</label>
+                    <label for="slide12" class="gallery-arrow gallery-arrow-right" id="arrow-right-11">&#8594;</label>
+                    <label for="slide11" class="gallery-arrow gallery-arrow-left" id="arrow-left-12">&#8592;</label>
+                    <label for="slide13" class="gallery-arrow gallery-arrow-right" id="arrow-right-12">&#8594;</label>
+                    <label for="slide12" class="gallery-arrow gallery-arrow-left" id="arrow-left-13">&#8592;</label>
+                    <label for="slide14" class="gallery-arrow gallery-arrow-right" id="arrow-right-13">&#8594;</label>
+                    <label for="slide13" class="gallery-arrow gallery-arrow-left" id="arrow-left-14">&#8592;</label>
+                    <label for="slide15" class="gallery-arrow gallery-arrow-right" id="arrow-right-14">&#8594;</label>
+                    <label for="slide14" class="gallery-arrow gallery-arrow-left" id="arrow-left-15">&#8592;</label>
+                    <label for="slide1" class="gallery-arrow gallery-arrow-right" id="arrow-right-15">&#8594;</label>
+                </div>
                 </div>
             </div>
         </section>
