@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* =========================
+   GALLERY HERO SECTION
+   ========================= */
+.gallery-hero {
+     text-align: center;
+     padding: 60px 10px 30px;
+     background: none;
+}
+.gallery-hero h1 {
+     font-family: var(--font-display);
+     color: var(--neon-pink);
+     font-size: 3.2rem;
+     text-shadow: 0 0 18px var(--neon-pink), 0 0 2px #fff;
+     margin-bottom: 18px;
+     letter-spacing: 2px;
+     animation: neonGlow 2s ease-in-out infinite alternate;
+}
+.gallery-hero p {
+     font-family: var(--font-body);
+     color: var(--energetic-pop);
+     font-size: 1.35rem;
+     max-width: 600px;
+     margin: 0 auto 0 auto;
+     text-shadow: 0 0 8px var(--purple-vibrant);
+     letter-spacing: 0.5px;
+}
+@media (max-width: 600px) {
+     .gallery-hero h1 {
+          font-size: 2.1rem;
+     }
+     .gallery-hero p {
+          font-size: 1.05rem;
+     }
+}
 /* =========================
    GALLERY MODAL (CSS :target)
    ========================= */
@@ -237,39 +276,6 @@
 .gallery-arrows-overlay label {
      display: none;
 }
-/* Responsive adjustments */
-@media (max-width: 900px) {
-     .gallery-slider {
-          max-width: 98vw;
-          padding: 12px 0 12px 0;
-     }
-     .gallery-slide img {
-          max-width: 98vw;
-          max-height: 40vh;
-     }
-     .gallery-arrows-overlay .gallery-arrow {
-          font-size: 2.1rem;
-          width: 40px;
-          height: 40px;
-     }
-}
-@media (max-width: 600px) {
-     .gallery-slider {
-          padding: 4px 0 4px 0;
-     }
-     .gallery-slide img {
-          max-width: 99vw;
-          max-height: 32vh;
-     }
-     .gallery-caption {
-          font-size: 1rem;
-     }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 :root {
      --font-display: 'Monoton', cursive;
      --font-body: 'Roboto', sans-serif;
@@ -391,6 +397,7 @@
      --font-display: 'Monoton', cursive;
      --font-nav: 'Montserrat', Arial, sans-serif;
      --font-body: 'Roboto', Arial, sans-serif;
+}
 
 /* =========================
     BASE STYLES
@@ -441,7 +448,6 @@ body {
      display: flex;
      justify-content: center;
      align-items: center;
-}
 }
 
 /* =========================
