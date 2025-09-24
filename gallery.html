@@ -8,129 +8,161 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="description" content="See the best moments and atmosphere of Street 66 Bar in our photo gallery.">
     <style>
-        /* Modern Gallery CSS */
-        .modern-gallery {
+        /* Gallery System CSS - Original Working Version */
+        .gallery-slider-section {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
 
-        .gallery-main {
+        .gallery-slider {
+            position: relative;
             background: rgba(0, 0, 0, 0.8);
             border-radius: 15px;
             padding: 2rem;
-            margin-bottom: 2rem;
             box-shadow: 0 10px 30px rgba(234, 145, 227, 0.3);
-        }
-
-        .gallery-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .gallery-viewer {
-            flex: 1;
-            position: relative;
-            border-radius: 10px;
             overflow: hidden;
-            background: #1a1a1a;
         }
 
-        .main-image {
+        /* Hide radio buttons */
+        .gallery-slider input[type="radio"] {
+            display: none;
+        }
+
+        /* Slides container */
+        .gallery-slides {
+            position: relative;
             width: 100%;
             height: 400px;
-            object-fit: cover;
-            transition: all 0.3s ease;
+            overflow: hidden;
             border-radius: 10px;
         }
 
-        .image-overlay {
+        /* Individual slides */
+        .gallery-slide {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.5s ease;
         }
 
-        .gallery-viewer:hover .image-overlay {
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Show active slides */
+        #slide1:checked ~ .gallery-slides .slide1,
+        #slide2:checked ~ .gallery-slides .slide2,
+        #slide3:checked ~ .gallery-slides .slide3,
+        #slide4:checked ~ .gallery-slides .slide4,
+        #slide5:checked ~ .gallery-slides .slide5,
+        #slide6:checked ~ .gallery-slides .slide6,
+        #slide7:checked ~ .gallery-slides .slide7,
+        #slide8:checked ~ .gallery-slides .slide8,
+        #slide9:checked ~ .gallery-slides .slide9,
+        #slide10:checked ~ .gallery-slides .slide10,
+        #slide11:checked ~ .gallery-slides .slide11,
+        #slide12:checked ~ .gallery-slides .slide12,
+        #slide13:checked ~ .gallery-slides .slide13,
+        #slide14:checked ~ .gallery-slides .slide14,
+        #slide15:checked ~ .gallery-slides .slide15 {
             opacity: 1;
         }
 
-        .zoom-btn {
-            background: rgba(234, 145, 227, 0.9);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+        /* Navigation arrows */
+        .gallery-nav-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
         }
 
-        .zoom-btn:hover {
-            background: #EA91E3;
-            transform: scale(1.05);
-        }
-
-        .gallery-nav {
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             background: rgba(234, 145, 227, 0.9);
             color: white;
-            border: none;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+            pointer-events: all;
+            user-select: none;
         }
 
-        .gallery-nav:hover {
+        .gallery-arrow:hover {
             background: #EA91E3;
-            transform: scale(1.1);
+            transform: translateY(-50%) scale(1.1);
         }
 
+        .gallery-arrow.prev {
+            left: 10px;
+        }
+
+        .gallery-arrow.next {
+            right: 10px;
+        }
+
+        /* Show correct navigation arrows based on active slide */
+        #slide1:checked ~ .gallery-nav-container label[for="slide15"].prev,
+        #slide1:checked ~ .gallery-nav-container label[for="slide2"].next,
+        #slide2:checked ~ .gallery-nav-container label[for="slide1"].prev,
+        #slide2:checked ~ .gallery-nav-container label[for="slide3"].next,
+        #slide3:checked ~ .gallery-nav-container label[for="slide2"].prev,
+        #slide3:checked ~ .gallery-nav-container label[for="slide4"].next,
+        #slide4:checked ~ .gallery-nav-container label[for="slide3"].prev,
+        #slide4:checked ~ .gallery-nav-container label[for="slide5"].next,
+        #slide5:checked ~ .gallery-nav-container label[for="slide4"].prev,
+        #slide5:checked ~ .gallery-nav-container label[for="slide6"].next,
+        #slide6:checked ~ .gallery-nav-container label[for="slide5"].prev,
+        #slide6:checked ~ .gallery-nav-container label[for="slide7"].next,
+        #slide7:checked ~ .gallery-nav-container label[for="slide6"].prev,
+        #slide7:checked ~ .gallery-nav-container label[for="slide8"].next,
+        #slide8:checked ~ .gallery-nav-container label[for="slide7"].prev,
+        #slide8:checked ~ .gallery-nav-container label[for="slide9"].next,
+        #slide9:checked ~ .gallery-nav-container label[for="slide8"].prev,
+        #slide9:checked ~ .gallery-nav-container label[for="slide10"].next,
+        #slide10:checked ~ .gallery-nav-container label[for="slide9"].prev,
+        #slide10:checked ~ .gallery-nav-container label[for="slide11"].next,
+        #slide11:checked ~ .gallery-nav-container label[for="slide10"].prev,
+        #slide11:checked ~ .gallery-nav-container label[for="slide12"].next,
+        #slide12:checked ~ .gallery-nav-container label[for="slide11"].prev,
+        #slide12:checked ~ .gallery-nav-container label[for="slide13"].next,
+        #slide13:checked ~ .gallery-nav-container label[for="slide12"].prev,
+        #slide13:checked ~ .gallery-nav-container label[for="slide14"].next,
+        #slide14:checked ~ .gallery-nav-container label[for="slide13"].prev,
+        #slide14:checked ~ .gallery-nav-container label[for="slide15"].next,
+        #slide15:checked ~ .gallery-nav-container label[for="slide14"].prev,
+        #slide15:checked ~ .gallery-nav-container label[for="slide1"].next {
+            display: flex !important;
+        }
+
+
+
+
+
+        /* Gallery controls and indicators */
         .gallery-controls {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            margin-top: 2rem;
             gap: 1rem;
-        }
-
-        .gallery-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .image-counter {
-            background: rgba(253, 248, 128, 0.2);
-            color: #FDF880;
-            padding: 8px 15px;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        .autoplay-btn {
-            background: rgba(253, 248, 128, 0.9);
-            color: #000;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .autoplay-btn:hover {
-            background: #FDF880;
-            transform: scale(1.05);
         }
 
         .gallery-indicators {
@@ -146,15 +178,31 @@
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: all 0.3s ease;
-        }
-
-        .indicator.active {
-            background: #EA91E3;
-            transform: scale(1.3);
+            display: block;
         }
 
         .indicator:hover {
             background: #FDF880;
+        }
+
+        /* Active indicator states */
+        #slide1:checked ~ .gallery-controls .gallery-indicators label:nth-child(1),
+        #slide2:checked ~ .gallery-controls .gallery-indicators label:nth-child(2),
+        #slide3:checked ~ .gallery-controls .gallery-indicators label:nth-child(3),
+        #slide4:checked ~ .gallery-controls .gallery-indicators label:nth-child(4),
+        #slide5:checked ~ .gallery-controls .gallery-indicators label:nth-child(5),
+        #slide6:checked ~ .gallery-controls .gallery-indicators label:nth-child(6),
+        #slide7:checked ~ .gallery-controls .gallery-indicators label:nth-child(7),
+        #slide8:checked ~ .gallery-controls .gallery-indicators label:nth-child(8),
+        #slide9:checked ~ .gallery-controls .gallery-indicators label:nth-child(9),
+        #slide10:checked ~ .gallery-controls .gallery-indicators label:nth-child(10),
+        #slide11:checked ~ .gallery-controls .gallery-indicators label:nth-child(11),
+        #slide12:checked ~ .gallery-controls .gallery-indicators label:nth-child(12),
+        #slide13:checked ~ .gallery-controls .gallery-indicators label:nth-child(13),
+        #slide14:checked ~ .gallery-controls .gallery-indicators label:nth-child(14),
+        #slide15:checked ~ .gallery-controls .gallery-indicators label:nth-child(15) {
+            background: #EA91E3;
+            transform: scale(1.3);
         }
 
         /* Thumbnail Grid */
@@ -172,11 +220,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid transparent;
-        }
-
-        .thumbnail.active {
-            border-color: #EA91E3;
-            box-shadow: 0 0 20px rgba(234, 145, 227, 0.5);
+            display: block;
         }
 
         .thumbnail:hover {
@@ -190,88 +234,27 @@
             object-fit: cover;
         }
 
-        /* Modal Zoom */
-        .modal-zoom {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
+        /* Active thumbnail states */
+        #slide1:checked ~ .gallery-thumbnails label:nth-child(1),
+        #slide2:checked ~ .gallery-thumbnails label:nth-child(2),
+        #slide3:checked ~ .gallery-thumbnails label:nth-child(3),
+        #slide4:checked ~ .gallery-thumbnails label:nth-child(4),
+        #slide5:checked ~ .gallery-thumbnails label:nth-child(5),
+        #slide6:checked ~ .gallery-thumbnails label:nth-child(6),
+        #slide7:checked ~ .gallery-thumbnails label:nth-child(7),
+        #slide8:checked ~ .gallery-thumbnails label:nth-child(8),
+        #slide9:checked ~ .gallery-thumbnails label:nth-child(9),
+        #slide10:checked ~ .gallery-thumbnails label:nth-child(10),
+        #slide11:checked ~ .gallery-thumbnails label:nth-child(11),
+        #slide12:checked ~ .gallery-thumbnails label:nth-child(12),
+        #slide13:checked ~ .gallery-thumbnails label:nth-child(13),
+        #slide14:checked ~ .gallery-thumbnails label:nth-child(14),
+        #slide15:checked ~ .gallery-thumbnails label:nth-child(15) {
+            border-color: #EA91E3;
+            box-shadow: 0 0 20px rgba(234, 145, 227, 0.5);
         }
 
-        .modal-content {
-            position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
-        }
 
-        .modal-image {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 10px;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: #EA91E3;
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background: #FDF880;
-            color: #000;
-            transform: scale(1.1);
-        }
-
-        .modal-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            padding: 0 -60px;
-        }
-
-        .modal-prev, .modal-next {
-            background: rgba(234, 145, 227, 0.9);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .modal-prev {
-            margin-left: -60px;
-        }
-
-        .modal-next {
-            margin-right: -60px;
-        }
-
-        .modal-prev:hover, .modal-next:hover {
-            background: #EA91E3;
-            transform: scale(1.1);
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -279,28 +262,7 @@
                 padding: 1rem;
             }
 
-            .gallery-container {
-                flex-direction: column;
-            }
-
-            .gallery-nav {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-
-            .prev {
-                left: 10px;
-            }
-
-            .next {
-                right: 10px;
-            }
-
-            .main-image {
+            .gallery-viewer {
                 height: 250px;
             }
 
@@ -316,18 +278,6 @@
 
             .thumbnail img {
                 height: 60px;
-            }
-
-            .modal-nav {
-                padding: 0 -40px;
-            }
-
-            .modal-prev {
-                margin-left: -40px;
-            }
-
-            .modal-next {
-                margin-right: -40px;
             }
         }
 
@@ -426,303 +376,181 @@
             <p>Experience the vibrant atmosphere of Street 66 Bar!</p>
         </section>
 
-        <!-- Modern Gallery System -->
-        <section class="modern-gallery fade-in">
-            <!-- Main Gallery Viewer -->
-            <div class="gallery-main">
-                <div class="gallery-container">
-                    <button class="gallery-nav prev" id="prevBtn" aria-label="Previous image">❮</button>
-                    <div class="gallery-viewer">
-                        <img id="mainImage" src="css/images/gallery/481903827_1417680125869822_5391643869720132358_n (1).jpg" alt="Street 66 Gallery" class="main-image">
-                        <div class="image-overlay">
-                            <button class="zoom-btn" id="zoomBtn">🔍 Zoom</button>
-                        </div>
+        <!-- Gallery System with Working Arrows -->
+        <section class="gallery-slider-section">
+            <div class="gallery-slider">
+                <!-- Radio button controls -->
+                <input type="radio" name="gallery" id="slide1" checked>
+                <input type="radio" name="gallery" id="slide2">
+                <input type="radio" name="gallery" id="slide3">
+                <input type="radio" name="gallery" id="slide4">
+                <input type="radio" name="gallery" id="slide5">
+                <input type="radio" name="gallery" id="slide6">
+                <input type="radio" name="gallery" id="slide7">
+                <input type="radio" name="gallery" id="slide8">
+                <input type="radio" name="gallery" id="slide9">
+                <input type="radio" name="gallery" id="slide10">
+                <input type="radio" name="gallery" id="slide11">
+                <input type="radio" name="gallery" id="slide12">
+                <input type="radio" name="gallery" id="slide13">
+                <input type="radio" name="gallery" id="slide14">
+                <input type="radio" name="gallery" id="slide15">
+
+                <!-- Gallery slides -->
+                <div class="gallery-slides">
+                    <div class="gallery-slide slide1">
+                        <img src="css/images/gallery/481903827_1417680125869822_5391643869720132358_n (1).jpg" alt="Fun at Street 66 Bar 1">
                     </div>
-                    <button class="gallery-nav next" id="nextBtn" aria-label="Next image">❯</button>
+                    <div class="gallery-slide slide2">
+                        <img src="css/images/gallery/482267965_1417680145869820_9211153481739201868_n.jpg" alt="Fun at Street 66 Bar 2">
+                    </div>
+                    <div class="gallery-slide slide3">
+                        <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (1).jpg" alt="Fun at Street 66 Bar 3">
+                    </div>
+                    <div class="gallery-slide slide4">
+                        <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n.jpg" alt="Fun at Street 66 Bar 4">
+                    </div>
+                    <div class="gallery-slide slide5">
+                        <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (2).jpg" alt="Fun at Street 66 Bar 5">
+                    </div>
+                    <div class="gallery-slide slide6">
+                        <img src="css/images/gallery/487462460_1437778667193301_8799167309488264491_n.jpg" alt="Fun at Street 66 Bar 6">
+                    </div>
+                    <div class="gallery-slide slide7">
+                        <img src="css/images/gallery/487792112_1438886590415842_1966670830959891633_n.jpg" alt="Fun at Street 66 Bar 7">
+                    </div>
+                    <div class="gallery-slide slide8">
+                        <img src="css/images/gallery/488017321_1437494747221693_1340412147082313578_n.jpg" alt="Fun at Street 66 Bar 8">
+                    </div>
+                    <div class="gallery-slide slide9">
+                        <img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n (1).jpg" alt="Fun at Street 66 Bar 9">
+                    </div>
+                    <div class="gallery-slide slide10">
+                        <img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n.jpg" alt="Fun at Street 66 Bar 10">
+                    </div>
+                    <div class="gallery-slide slide11">
+                        <img src="css/images/gallery/488217405_1439705917000576_7242053845707404504_n.jpg" alt="Fun at Street 66 Bar 11">
+                    </div>
+                    <div class="gallery-slide slide12">
+                        <img src="css/images/gallery/488861292_1443178829986618_6472122392835636950_n.jpg" alt="Fun at Street 66 Bar 12">
+                    </div>
+                    <div class="gallery-slide slide13">
+                        <img src="css/images/gallery/488904812_1441028286868339_5242781180593017509_n.jpg" alt="Fun at Street 66 Bar 13">
+                    </div>
+                    <div class="gallery-slide slide14">
+                        <img src="css/images/gallery/489040095_1443554853282349_4191832262629036408_n.jpg" alt="Fun at Street 66 Bar 14">
+                    </div>
+                    <div class="gallery-slide slide15">
+                        <img src="css/images/gallery/499465855_3236083859864499_1979244406370271612_n.jpg" alt="Fun at Street 66 Bar 15">
+                    </div>
                 </div>
-                
-                <!-- Gallery Controls -->
+
+                <!-- Navigation arrows with proper labels -->
+                <div class="gallery-nav-container">
+                    <label for="slide15" class="gallery-arrow prev" title="Previous">❮</label>
+                    <label for="slide14" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide13" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide12" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide11" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide10" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide9" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide8" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide7" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide6" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide5" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide4" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide3" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide2" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    <label for="slide1" class="gallery-arrow prev" title="Previous" style="display:none;"></label>
+                    
+                    <label for="slide2" class="gallery-arrow next" title="Next">❯</label>
+                    <label for="slide3" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide4" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide5" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide6" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide7" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide8" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide9" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide10" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide11" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide12" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide13" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide14" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide15" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                    <label for="slide1" class="gallery-arrow next" title="Next" style="display:none;"></label>
+                </div>
+
+                <!-- Gallery indicators -->
                 <div class="gallery-controls">
-                    <div class="gallery-info">
-                        <span class="image-counter">1 / 15</span>
-                        <button class="autoplay-btn" id="autoplayBtn">⏯️ Autoplay</button>
-                    </div>
                     <div class="gallery-indicators">
-                        <span class="indicator active" data-slide="0" aria-label="Image 1"></span>
-                        <span class="indicator" data-slide="1" aria-label="Image 2"></span>
-                        <span class="indicator" data-slide="2" aria-label="Image 3"></span>
-                        <span class="indicator" data-slide="3" aria-label="Image 4"></span>
-                        <span class="indicator" data-slide="4" aria-label="Image 5"></span>
-                        <span class="indicator" data-slide="5" aria-label="Image 6"></span>
-                        <span class="indicator" data-slide="6" aria-label="Image 7"></span>
-                        <span class="indicator" data-slide="7" aria-label="Image 8"></span>
-                        <span class="indicator" data-slide="8" aria-label="Image 9"></span>
-                        <span class="indicator" data-slide="9" aria-label="Image 10"></span>
-                        <span class="indicator" data-slide="10" aria-label="Image 11"></span>
-                        <span class="indicator" data-slide="11" aria-label="Image 12"></span>
-                        <span class="indicator" data-slide="12" aria-label="Image 13"></span>
-                        <span class="indicator" data-slide="13" aria-label="Image 14"></span>
-                        <span class="indicator" data-slide="14" aria-label="Image 15"></span>
+                        <label for="slide1" class="indicator"></label>
+                        <label for="slide2" class="indicator"></label>
+                        <label for="slide3" class="indicator"></label>
+                        <label for="slide4" class="indicator"></label>
+                        <label for="slide5" class="indicator"></label>
+                        <label for="slide6" class="indicator"></label>
+                        <label for="slide7" class="indicator"></label>
+                        <label for="slide8" class="indicator"></label>
+                        <label for="slide9" class="indicator"></label>
+                        <label for="slide10" class="indicator"></label>
+                        <label for="slide11" class="indicator"></label>
+                        <label for="slide12" class="indicator"></label>
+                        <label for="slide13" class="indicator"></label>
+                        <label for="slide14" class="indicator"></label>
+                        <label for="slide15" class="indicator"></label>
                     </div>
                 </div>
             </div>
 
-            <!-- Thumbnail Grid -->
-            <div class="gallery-thumbnails">
-                <div class="thumbnail active" data-index="0">
-                    <img src="css/images/gallery/481903827_1417680125869822_5391643869720132358_n (1).jpg" alt="Street 66 Moment 1">
-                </div>
-                <div class="thumbnail" data-index="1">
-                    <img src="css/images/gallery/482267965_1417680145869820_9211153481739201868_n.jpg" alt="Street 66 Moment 2">
-                </div>
-                <div class="thumbnail" data-index="2">
-                    <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (1).jpg" alt="Street 66 Moment 3">
-                </div>
-                <div class="thumbnail" data-index="3">
-                    <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n.jpg" alt="Street 66 Moment 4">
-                </div>
-                <div class="thumbnail" data-index="4">
-                    <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (2).jpg" alt="Street 66 Moment 5">
-                </div>
-                <div class="thumbnail" data-index="5">
-                    <img src="css/images/gallery/487462460_1437778667193301_8799167309488264491_n.jpg" alt="Street 66 Moment 6">
-                </div>
-                <div class="thumbnail" data-index="6">
-                    <img src="css/images/gallery/487792112_1438886590415842_1966670830959891633_n.jpg" alt="Street 66 Moment 7">
-                </div>
-                <div class="thumbnail" data-index="7">
-                    <img src="css/images/gallery/488017321_1437494747221693_1340412147082313578_n.jpg" alt="Street 66 Moment 8">
-                </div>
-                <div class="thumbnail" data-index="8">
-                    <img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n (1).jpg" alt="Street 66 Moment 9">
-                </div>
-                <div class="thumbnail" data-index="9">
-                    <img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n.jpg" alt="Street 66 Moment 10">
-                </div>
-                <div class="thumbnail" data-index="10">
-                    <img src="css/images/gallery/488217405_1439705917000576_7242053845707404504_n.jpg" alt="Street 66 Moment 11">
-                </div>
-                <div class="thumbnail" data-index="11">
-                    <img src="css/images/gallery/488861292_1443178829986618_6472122392835636950_n.jpg" alt="Street 66 Moment 12">
-                </div>
-                <div class="thumbnail" data-index="12">
-                    <img src="css/images/gallery/488904812_1441028286868339_5242781180593017509_n.jpg" alt="Street 66 Moment 13">
-                </div>
-                <div class="thumbnail" data-index="13">
-                    <img src="css/images/gallery/489040095_1443554853282349_4191832262629036408_n.jpg" alt="Street 66 Moment 14">
-                </div>
-                <div class="thumbnail" data-index="14">
-                    <img src="css/images/gallery/499465855_3236083859864499_1979244406370271612_n.jpg" alt="Street 66 Moment 15">
-                </div>
-            </div>
-        </section>
-
-        <!-- Modal Zoom -->
-        <div class="modal-zoom" id="modalZoom">
-            <div class="modal-content">
-                <button class="modal-close" id="modalClose" aria-label="Close zoom">✕</button>
-                <img id="modalImage" src="" alt="Zoomed Image" class="modal-image">
-                <div class="modal-nav">
-                    <button class="modal-prev" id="modalPrev" aria-label="Previous image in zoom">❮</button>
-                    <button class="modal-next" id="modalNext" aria-label="Next image in zoom">❯</button>
-                </div>
-            </div>
+        <!-- Thumbnail Grid -->
+        <div class="gallery-thumbnails">
+            <label for="slide1" class="thumbnail">
+                <img src="css/images/gallery/481903827_1417680125869822_5391643869720132358_n (1).jpg" alt="Street 66 Moment 1">
+            </label>
+            <label for="slide2" class="thumbnail">
+                <img src="css/images/gallery/482267965_1417680145869820_9211153481739201868_n.jpg" alt="Street 66 Moment 2">
+            </label>
+            <label for="slide3" class="thumbnail">
+                <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (1).jpg" alt="Street 66 Moment 3">
+            </label>
+            <label for="slide4" class="thumbnail">
+                <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n.jpg" alt="Street 66 Moment 4">
+            </label>
+            <label for="slide5" class="thumbnail">
+                <img src="css/images/gallery/487484816_1438089820495519_6817807828236238954_n (2).jpg" alt="Street 66 Moment 5">
+            </label>
+            <label for="slide6" class="thumbnail">
+                <img src="css/images/gallery/487462460_1437778667193301_8799167309488264491_n.jpg" alt="Street 66 Moment 6">
+            </label>
+            <label for="slide7" class="thumbnail">
+                <img src="css/images/gallery/487792112_1438886590415842_1966670830959891633_n.jpg" alt="Street 66 Moment 7">
+            </label>
+            <label for="slide8" class="thumbnail">
+                <img src="css/images/gallery/488017321_1437494747221693_1340412147082313578_n.jpg" alt="Street 66 Moment 8">
+            </label>
+            <label for="slide9" class="thumbnail">
+                <img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n (1).jpg" alt="Street 66 Moment 9">
+            </label>
+            <label for="slide10" class="thumbnail">
+                <img src="css/images/gallery/488047280_1438802670424234_4686985465274011141_n.jpg" alt="Street 66 Moment 10">
+            </label>
+            <label for="slide11" class="thumbnail">
+                <img src="css/images/gallery/488217405_1439705917000576_7242053845707404504_n.jpg" alt="Street 66 Moment 11">
+            </label>
+            <label for="slide12" class="thumbnail">
+                <img src="css/images/gallery/488861292_1443178829986618_6472122392835636950_n.jpg" alt="Street 66 Moment 12">
+            </label>
+            <label for="slide13" class="thumbnail">
+                <img src="css/images/gallery/488904812_1441028286868339_5242781180593017509_n.jpg" alt="Street 66 Moment 13">
+            </label>
+            <label for="slide14" class="thumbnail">
+                <img src="css/images/gallery/489040095_1443554853282349_4191832262629036408_n.jpg" alt="Street 66 Moment 14">
+            </label>
+            <label for="slide15" class="thumbnail">
+                <img src="css/images/gallery/499465855_3236083859864499_1979244406370271612_n.jpg" alt="Street 66 Moment 15">
+            </label>
         </div>
-
-        <!-- JavaScript for Gallery -->
-        <script>
-        class ModernGallery {
-            constructor() {
-                this.currentIndex = 0;
-                this.images = [
-                    'css/images/gallery/481903827_1417680125869822_5391643869720132358_n (1).jpg',
-                    'css/images/gallery/482267965_1417680145869820_9211153481739201868_n.jpg',
-                    'css/images/gallery/487484816_1438089820495519_6817807828236238954_n (1).jpg',
-                    'css/images/gallery/487484816_1438089820495519_6817807828236238954_n.jpg',
-                    'css/images/gallery/487484816_1438089820495519_6817807828236238954_n (2).jpg',
-                    'css/images/gallery/487462460_1437778667193301_8799167309488264491_n.jpg',
-                    'css/images/gallery/487792112_1438886590415842_1966670830959891633_n.jpg',
-                    'css/images/gallery/488017321_1437494747221693_1340412147082313578_n.jpg',
-                    'css/images/gallery/488047280_1438802670424234_4686985465274011141_n (1).jpg',
-                    'css/images/gallery/488047280_1438802670424234_4686985465274011141_n.jpg',
-                    'css/images/gallery/488217405_1439705917000576_7242053845707404504_n.jpg',
-                    'css/images/gallery/488861292_1443178829986618_6472122392835636950_n.jpg',
-                    'css/images/gallery/488904812_1441028286868339_5242781180593017509_n.jpg',
-                    'css/images/gallery/489040095_1443554853282349_4191832262629036408_n.jpg',
-                    'css/images/gallery/499465855_3236083859864499_1979244406370271612_n.jpg'
-                ];
-                this.autoplayInterval = null;
-                this.isAutoplay = false;
-                this.init();
-            }
-
-            init() {
-                // Event listeners
-                document.getElementById('prevBtn')?.addEventListener('click', () => this.prevImage());
-                document.getElementById('nextBtn')?.addEventListener('click', () => this.nextImage());
-                document.getElementById('autoplayBtn')?.addEventListener('click', () => this.toggleAutoplay());
-                document.getElementById('zoomBtn')?.addEventListener('click', () => this.openModal());
-                document.getElementById('modalClose')?.addEventListener('click', () => this.closeModal());
-                document.getElementById('modalPrev')?.addEventListener('click', () => this.modalPrev());
-                document.getElementById('modalNext')?.addEventListener('click', () => this.modalNext());
-
-                // Thumbnails
-                document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
-                    thumb.addEventListener('click', () => this.goToImage(index));
-                });
-
-                // Indicators
-                document.querySelectorAll('.indicator').forEach((indicator, index) => {
-                    indicator.addEventListener('click', () => this.goToImage(index));
-                });
-
-                // Keyboard navigation
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowLeft') this.prevImage();
-                    if (e.key === 'ArrowRight') this.nextImage();
-                    if (e.key === 'Escape') this.closeModal();
-                    if (e.key === ' ') { e.preventDefault(); this.toggleAutoplay(); }
-                });
-
-                // Touch gestures
-                this.addTouchGestures();
-
-                // Close modal on background click
-                document.getElementById('modalZoom')?.addEventListener('click', (e) => {
-                    if (e.target === e.currentTarget) {
-                        this.closeModal();
-                    }
-                });
-            }
-
-            addTouchGestures() {
-                const viewer = document.querySelector('.gallery-viewer');
-                if (!viewer) return;
-                
-                let startX = 0;
-                let startY = 0;
-
-                viewer.addEventListener('touchstart', (e) => {
-                    startX = e.touches[0].clientX;
-                    startY = e.touches[0].clientY;
-                }, { passive: true });
-
-                viewer.addEventListener('touchend', (e) => {
-                    const endX = e.changedTouches[0].clientX;
-                    const endY = e.changedTouches[0].clientY;
-                    const diffX = startX - endX;
-                    const diffY = Math.abs(startY - endY);
-
-                    // Only horizontal swipes
-                    if (Math.abs(diffX) > 50 && diffY < 100) {
-                        if (diffX > 0) {
-                            this.nextImage();
-                        } else {
-                            this.prevImage();
-                        }
-                    }
-                }, { passive: true });
-            }
-
-            updateImage() {
-                const mainImage = document.getElementById('mainImage');
-                const counter = document.querySelector('.image-counter');
-                
-                if (!mainImage || !counter) return;
-
-                // Update main image with smooth transition
-                mainImage.style.opacity = '0';
-                setTimeout(() => {
-                    mainImage.src = this.images[this.currentIndex];
-                    mainImage.style.opacity = '1';
-                }, 200);
-
-                // Update counter
-                counter.textContent = `${this.currentIndex + 1} / ${this.images.length}`;
-
-                // Update thumbnails
-                document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
-                    thumb.classList.toggle('active', index === this.currentIndex);
-                });
-
-                // Update indicators
-                document.querySelectorAll('.indicator').forEach((indicator, index) => {
-                    indicator.classList.toggle('active', index === this.currentIndex);
-                });
-            }
-
-            prevImage() {
-                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-                this.updateImage();
-            }
-
-            nextImage() {
-                this.currentIndex = (this.currentIndex + 1) % this.images.length;
-                this.updateImage();
-            }
-
-            goToImage(index) {
-                this.currentIndex = index;
-                this.updateImage();
-            }
-
-            toggleAutoplay() {
-                const btn = document.getElementById('autoplayBtn');
-                if (!btn) return;
-
-                if (this.isAutoplay) {
-                    clearInterval(this.autoplayInterval);
-                    btn.textContent = '⏯️ Autoplay';
-                    btn.style.background = 'rgba(253, 248, 128, 0.9)';
-                    this.isAutoplay = false;
-                } else {
-                    this.autoplayInterval = setInterval(() => this.nextImage(), 3000);
-                    btn.textContent = '⏸️ Pause';
-                    btn.style.background = 'rgba(234, 145, 227, 0.9)';
-                    this.isAutoplay = true;
-                }
-            }
-
-            openModal() {
-                const modal = document.getElementById('modalZoom');
-                const modalImage = document.getElementById('modalImage');
-                if (!modal || !modalImage) return;
-
-                modalImage.src = this.images[this.currentIndex];
-                modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            }
-
-            closeModal() {
-                const modal = document.getElementById('modalZoom');
-                if (!modal) return;
-
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-
-            modalPrev() {
-                this.prevImage();
-                const modalImage = document.getElementById('modalImage');
-                if (modalImage) {
-                    modalImage.src = this.images[this.currentIndex];
-                }
-            }
-
-            modalNext() {
-                this.nextImage();
-                const modalImage = document.getElementById('modalImage');
-                if (modalImage) {
-                    modalImage.src = this.images[this.currentIndex];
-                }
-            }
-        }
-
-        // Initialize gallery when page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            new ModernGallery();
-        });
-        </script>
+        </section>
     </main>
 
     <!-- FOOTER (same as index/contact) -->

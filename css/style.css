@@ -1,4 +1,3 @@
-
 /* =========================
     IMPORTS & FONTS
    ========================= */
@@ -1456,7 +1455,8 @@ body {
 @media (max-width: 768px) {
      .header-container { flex-direction: column; gap: 15px; padding: 20px 0; }
      .main-nav ul { flex-wrap: wrap; justify-content: center; gap: 20px; }
-     .hero h1 { font-size: 2.5rem; }
+     .hero h1 { font-size: 3rem; line-height: 1.1; }
+     .hero { padding: 130px 20px 90px; }
      .two-worlds h2, .next-events h2 { font-size: 2rem; font-family: var(--font-display); }
      .events-grid { grid-template-columns: 1fr; gap: 20px; }
      .event-card, .event-card-2, .event-card-3 {
@@ -1530,7 +1530,8 @@ body {
      .world-card h3 { font-size: 1.4rem; margin-bottom: 15px; }
      .world-card p { font-size: 1rem; margin-bottom: 20px; }
      .world-card .button { padding: 12px 25px; font-size: 0.9rem; }
-     .hero h1 { font-size: 2rem; }
+     .hero h1 { font-size: 2.5rem; line-height: 1.1; }
+     .hero { padding: 120px 15px 80px; }
      .cta-button { padding: 12px 25px; font-size: 14px; }
      .next-events { padding: 50px 15px; }
      .next-events h2 { font-size: 2rem; }
@@ -1543,6 +1544,8 @@ body {
           padding-left: 1vw;
           padding-right: 1vw;
      }
+     .hero h1 { font-size: 2.2rem; }
+     .hero { padding: 100px 10px 70px; }
      .gallery-slide img, .about-gallery-photos img {
           max-width: 100vw;
           max-height: 28vh;
