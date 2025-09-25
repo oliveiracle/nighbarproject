@@ -570,7 +570,8 @@ body {
      text-transform: uppercase;
      letter-spacing: 1px;
      text-align: center;
-     align-self: flex-start;
+     align-self: center
+     
 }
 .world-card .button:hover {
      transform: translateY(-3px);
@@ -605,14 +606,16 @@ body {
      background-color: rgba(18, 18, 18, 0.7);
      border: 2px solid var(--purple-deep);
      border-radius: 28px;
-     padding: 12px 10px;
+     padding: 15px;
      transition: all 0.3s ease;
      display: flex;
      flex-direction: column;
      align-items: center;
+     justify-content: space-between;
      max-width: 220px;
      min-width: 140px;
      margin: 0 25px;
+     height: 320px;
 }
 .event-card:hover {
      transform: translateY(-10px);
@@ -634,6 +637,10 @@ body {
      font-size: 1.4em;
      color: var(--text-light);
      margin: 10px 0;
+     flex-grow: 1;
+     display: flex;
+     align-items: center;
+     text-align: center;
 }
 .event-card p {
      color: #ccc;
@@ -650,10 +657,118 @@ body {
      border-radius: 5px;
      font-weight: bold;
      transition: all 0.3s ease;
+     margin-top: auto;
 }
 .event-button:hover {
      background-color: var(--neon-pink);
      box-shadow: 0 0 15px var(--neon-pink);
+}
+
+/* DJ Pixie-Woo Card - Estilo Especial */
+.pixie-card {
+     background: linear-gradient(135deg, 
+          rgba(25, 18, 40, 0.95) 0%, 
+          rgba(35, 25, 50, 0.9) 50%, 
+          rgba(45, 30, 60, 0.85) 100%);
+     border: 2px solid rgba(234, 145, 227, 0.6);
+     box-shadow: 0 0 10px rgba(234, 145, 227, 0.2);
+     position: relative;
+     overflow: hidden;
+     padding: 15px !important;
+     height: 500px !important;
+}
+
+.pixie-card::before {
+     content: '🎵';
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     font-size: 1.5rem;
+     opacity: 0.4;
+     animation: musicNote 3s ease-in-out infinite alternate;
+}
+
+@keyframes musicNote {
+     0% { transform: rotate(-5deg) scale(1); opacity: 0.4; }
+     100% { transform: rotate(5deg) scale(1.05); opacity: 0.6; }
+}
+
+.pixie-card:hover {
+     border-color: rgba(253, 248, 128, 0.5);
+     box-shadow: 0 0 8px rgba(234, 145, 227, 0.2);
+     transform: translateY(-3px);
+     background: linear-gradient(145deg, rgba(20, 15, 35, 0.95), rgba(25, 18, 40, 0.9));
+}
+
+.pixie-card:hover::before {
+     opacity: 0.7;
+     color: #FDF880;
+}
+
+.pixie-thumbnail {
+     width: 150px !important;
+     height: 150px !important;
+     border: 2px solid rgba(234, 145, 227, 0.7);
+     box-shadow: 0 0 8px rgba(234, 145, 227, 0.3);
+     transition: all 0.3s ease;
+     margin-bottom: 8px !important;
+}
+
+.pixie-card:hover .pixie-thumbnail {
+     border-color: rgba(253, 248, 128, 0.9);
+     box-shadow: 0 0 12px rgba(253, 248, 128, 0.4);
+     transform: scale(1.03);
+}
+
+.pixie-card h3 {
+     color: #ffffff !important;
+     font-size: 1.1rem !important;
+     text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+     margin: 8px 0 10px 0 !important;
+     line-height: 1.3 !important;
+     text-align: left !important;
+     height: 250px !important;
+}
+
+.pixie-schedule {
+     color: #FDF880 !important;
+     font-size: 1.1rem !important;
+     font-weight: bold !important;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 8px rgba(253, 248, 128, 0.6);
+     animation: scheduleGlow 3s ease-in-out infinite alternate;
+     display: inline;
+}
+
+@keyframes scheduleGlow {
+     0% { 
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 8px rgba(253, 248, 128, 0.6);
+     }
+     100% { 
+          text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 12px rgba(253, 248, 128, 0.8);
+     }
+}
+
+.pixie-button {
+     background: linear-gradient(45deg, #1DB954, #1ed760) !important;
+     color: white !important;
+     padding: 8px 16px !important;
+     border-radius: 25px !important;
+     font-weight: bold;
+     font-size: 0.85rem;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+     border: 2px solid #1DB954;
+     transition: all 0.3s ease;
+     margin-top: 15px;
+}
+
+.pixie-button:hover {
+     background: linear-gradient(45deg, #1ed760, #1DB954) !important;
+     box-shadow: 0 0 20px rgba(29, 185, 84, 0.6) !important;
+     transform: translateY(-2px);
+     border-color: #1ed760;
 }
 
 
@@ -691,6 +806,7 @@ body {
      font-family: var(--font-body);
      font-size: 1.3rem;
      transition: all 0.3s ease;
+     
 }
 #event-pixiewooo:hover {
      background: linear-gradient(45deg, var(--neon-pink), var(--energetic-pop));
@@ -702,8 +818,8 @@ body {
 
 /* Card 2 - Pride Poets */
 .event-pridepoets {
-     width: 150px !important;
-     height: 150px !important;
+     width: 600px !important;
+     height: 600px !important;
      border-radius: 50%;
      object-fit: cover;
      box-shadow: 0 0 24px var(--neon-pink), 0 0 8px var(--purple-vibrant);
@@ -718,8 +834,7 @@ body {
      box-shadow: 0 0 36px var(--neon-pink), 0 0 16px var(--purple-vibrant);
 }
 #event-pridepoets {
-    height: 170px !important; /* Here is Where I Adjust the Height */
-     display: inline-block;
+    display: inline-block;
      background: linear-gradient(45deg, var(--purple-vibrant), var(--neon-pink));
      color: var(--text-light);
      padding: 34px 20px;
@@ -732,15 +847,207 @@ body {
      position: relative;
      overflow: hidden;
      font-family: var(--font-body);
-     font-size: 1rem;
+     font-size: 1.3rem;
      transition: all 0.3s ease;
 }
 #event-pridepoets:hover {
-     background: linear-gradient(45deg, var(--neon-pink), var(--energetic-pop));
+    background: linear-gradient(45deg, var(--neon-pink), var(--energetic-pop));
      color: var(--background-dark);
      box-shadow: 0 0 24px var(--neon-pink), 0 8px 24px rgba(234,145,227,0.3);
      transform: translateY(-3px) scale(1.04);
 }
+
+.pride-button {
+     background: linear-gradient(45deg, #b91d92, #b91d92) !important;
+     color: white !important;
+     padding: 8px 16px !important;
+     border-radius: 25px !important;
+     font-weight: bold;
+     font-size: 0.85rem;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+     border: 2px solid #b91d92;
+     transition: all 0.3s ease;
+     margin-top: 15px;
+}
+
+.pride-button:hover {
+     background: linear-gradient(45deg, #b91d92, #b91d92) !important;
+     box-shadow: 0 0 20px rgba(185, 29, 146, 0.6) !important;
+     transform: translateY(-2px);
+     border-color: #b91d92;
+}
+
+/* Pride Poets Card - Estilo Padronizado */
+.pride-card {
+     background: linear-gradient(135deg, 
+          rgba(40, 18, 35, 0.95) 0%, 
+          rgba(50, 25, 45, 0.9) 50%, 
+          rgba(60, 30, 55, 0.85) 100%);
+     border: 2px solid rgba(185, 29, 146, 0.6);
+     box-shadow: 0 0 10px rgba(185, 29, 146, 0.2);
+     position: relative;
+     overflow: hidden;
+     padding: 15px !important;
+     height: 500px !important;
+}
+
+.pride-card::before {
+     content: '🏳️‍🌈';
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     font-size: 1.5rem;
+     opacity: 0.4;
+     animation: prideGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes prideGlow {
+     0% { 
+          opacity: 0.4;
+          transform: scale(1);
+     }
+     100% { 
+          opacity: 0.7;
+          transform: scale(1.1);
+     }
+}
+
+.pride-card:hover {
+     border-color: rgba(185, 29, 146, 0.5);
+     box-shadow: 0 0 8px rgba(185, 29, 146, 0.2);
+     transform: translateY(-3px);
+     background: linear-gradient(145deg, rgba(35, 15, 30, 0.95), rgba(45, 20, 40, 0.9));
+}
+
+.pride-card:hover::before {
+     opacity: 0.7;
+     color: #b91d92;
+}
+
+.pride-thumbnail {
+     width: 150px !important;
+     height: 150px !important;
+     border: 2px solid rgba(185, 29, 146, 0.7);
+     box-shadow: 0 0 8px rgba(185, 29, 146, 0.3);
+     transition: all 0.3s ease;
+     margin-bottom: 8px !important;
+}
+
+.pride-card:hover .pride-thumbnail {
+     border-color: rgba(185, 29, 146, 0.9);
+     box-shadow: 0 0 12px rgba(185, 29, 146, 0.4);
+     transform: scale(1.03);
+}
+
+.pride-card h3 {
+     color: #ffffff !important;
+     font-size: 1.1rem !important;
+     text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+     margin: 8px 0 10px 0 !important;
+     line-height: 1.3 !important;
+     text-align: left !important;
+     height: 200px !important;
+}
+
+/* Board Games Card - Estilo Padronizado */
+.boardgames-card {
+     background: linear-gradient(135deg, 
+          rgba(18, 35, 40, 0.95) 0%, 
+          rgba(25, 45, 50, 0.9) 50%, 
+          rgba(30, 55, 60, 0.85) 100%);
+     border: 2px solid rgba(255, 140, 0, 0.6);
+     box-shadow: 0 0 10px rgba(255, 140, 0, 0.2);
+     position: relative;
+     overflow: hidden;
+     padding: 15px !important;
+     height: 500px !important;
+}
+
+.boardgames-card::before {
+     content: '🎲';
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     font-size: 1.5rem;
+     opacity: 0.4;
+     animation: diceRoll 3s ease-in-out infinite alternate;
+}
+
+@keyframes diceRoll {
+     0% { 
+          opacity: 0.4;
+          transform: rotate(0deg);
+     }
+     100% { 
+          opacity: 0.7;
+          transform: rotate(15deg);
+     }
+}
+
+.boardgames-card:hover {
+     border-color: rgba(255, 140, 0, 0.5);
+     box-shadow: 0 0 8px rgba(255, 140, 0, 0.2);
+     transform: translateY(-3px);
+     background: linear-gradient(145deg, rgba(15, 30, 35, 0.95), rgba(20, 40, 45, 0.9));
+}
+
+.boardgames-card:hover::before {
+     opacity: 0.7;
+     color: #FF8C00;
+}
+
+.boardgames-thumbnail {
+     width: 150px !important;
+     height: 150px !important;
+     border: 2px solid rgba(255, 140, 0, 0.7);
+     box-shadow: 0 0 8px rgba(255, 140, 0, 0.3);
+     transition: all 0.3s ease;
+     margin-bottom: 8px !important;
+}
+
+.boardgames-card:hover .boardgames-thumbnail {
+     border-color: rgba(255, 140, 0, 0.9);
+     box-shadow: 0 0 12px rgba(255, 140, 0, 0.4);
+     transform: scale(1.03);
+}
+
+.boardgames-card h3 {
+     color: #ffffff !important;
+     font-size: 1.1rem !important;
+     text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+     margin: 8px 0 10px 0 !important;
+     line-height: 1.3 !important;
+     text-align: left !important;
+     
+}
+
+
+.boardgames-button {
+     background: linear-gradient(45deg, #fdf860, #f5e050) !important;
+     color: #333333 !important;
+     padding: 8px 16px !important;
+     border-radius: 25px !important;
+     font-weight: bold;
+     font-size: 0.85rem;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+     border: 2px solid #fdf860;
+     transition: all 0.3s ease;
+     margin-top: 15px;
+}
+
+.boardgames-button:hover {
+     background: linear-gradient(45deg, #f5e050, #fdf860) !important;
+     box-shadow: 0 0 20px rgba(253, 248, 96, 0.6) !important;
+     transform: translateY(-2px);
+     border-color: #f5e050;
+}
+
+
+
+
+
 
 /* Card 3 - Board Games */
 .event-boardgames {
