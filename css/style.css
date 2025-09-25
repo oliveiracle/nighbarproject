@@ -101,7 +101,7 @@ body:has(#menu-toggle:checked) {
    ========================= */
 body {
      background-color: var(--background-dark);
-     background-image: url('images/pexels-orlandoallo-2273488.jpg');
+     background-image: url('../assets/images/backgrounds/pexels-orlandoallo-2273488.jpg');
      background-size: cover;
      background-position: center center;
      background-attachment: fixed;
@@ -235,7 +235,7 @@ body {
 .hero {
      text-align: center;
      padding: 150px 20px 100px;
-     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(css/images/gallery/street66.jpg) center center/cover no-repeat;
+     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../assets/images/gallery/street66.jpg) center center/cover no-repeat;
      position: relative;
      overflow: hidden;
      display: flex;
@@ -1371,7 +1371,7 @@ body {
     GALLERY PAGE BACKGROUND
    ========================= */
 .gallery-bg {
-     background: url('css/images/gallery/bg.png') no-repeat center center fixed !important;
+     background: url('../assets/images/gallery/bg.png') no-repeat center center fixed !important;
      background-size: cover !important;
      background-color: #181028 !important;
 }
