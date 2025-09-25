@@ -235,7 +235,7 @@ body {
 .hero {
      text-align: center;
      padding: 150px 20px 100px;
-     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/street66.jpg') center center/cover no-repeat;
+     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(css/images/gallery/street66.jpg) center center/cover no-repeat;
      position: relative;
      overflow: hidden;
      display: flex;
@@ -421,6 +421,39 @@ body {
      letter-spacing: 1px;
      font-family: var(--font-display);
 }
+.world-card:nth-child(1) h3 {
+     color: var(--neon-pink);
+     text-shadow: 
+          0 0 10px rgba(234, 145, 227, 0.6),
+          0 0 20px rgba(234, 145, 227, 0.3);
+     position: relative;
+     font-family: var(--font-display);
+     transition: all 0.3s ease;
+}
+.world-card:nth-child(1):hover h3 {
+     text-shadow: 
+          0 0 15px rgba(234, 145, 227, 0.8),
+          0 0 25px rgba(234, 145, 227, 0.4),
+          0 0 35px rgba(234, 145, 227, 0.2);
+}
+
+.world-card:nth-child(2) h3 {
+     color: #d4af37;
+     text-shadow: 
+          0 0 10px rgba(212, 175, 55, 0.6),
+          0 0 20px rgba(212, 175, 55, 0.3);
+     position: relative;
+     font-family: var(--font-display);
+     transition: all 0.3s ease;
+}
+
+.world-card:nth-child(2):hover h3 {
+     text-shadow: 
+          0 0 15px rgba(212, 175, 55, 0.8),
+          0 0 25px rgba(212, 175, 55, 0.4),
+          0 0 35px rgba(212, 175, 55, 0.2);
+}
+
 .world-card p {
      color: var(--text-light);
      line-height: 1.7;
@@ -429,11 +462,102 @@ body {
      flex-grow: 1;
      font-family: var(--font-body);
 }
-.world-card:nth-child(1) { border-color: var(--purple-deep); }
-.world-card:nth-child(1):hover { border-color: var(--neon-pink); box-shadow: 0 0 25px rgba(234, 145, 227, 0.4); }
-.world-card:nth-child(2) { border-color: var(--purple-vibrant); }
-.world-card:nth-child(2):hover { border-color: var(--energetic-pop); box-shadow: 0 0 25px rgba(253, 248, 128, 0.4); }
-.world-card:nth-child(2) h3 { color: var(--energetic-pop); }
+.world-card:nth-child(1) { 
+     border: 2px solid var(--purple-deep);
+     background: linear-gradient(135deg, 
+          rgba(24, 16, 40, 0.95) 0%, 
+          rgba(40, 20, 60, 0.9) 50%, 
+          rgba(60, 30, 80, 0.85) 100%);
+     position: relative;
+     overflow: hidden;
+     transition: all 0.4s ease;
+}
+.world-card:nth-child(1)::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: linear-gradient(135deg, 
+          rgba(234, 145, 227, 0.05) 0%, 
+          transparent 50%, 
+          rgba(253, 248, 128, 0.03) 100%);
+     z-index: 1;
+     border-radius: 10px;
+}
+.world-card:nth-child(1)::after {
+     content: '♪';
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     font-size: 1.5rem;
+     color: var(--neon-pink);
+     text-shadow: 0 0 8px var(--neon-pink);
+     z-index: 3;
+     opacity: 0.7;
+     transition: all 0.3s ease;
+}
+.world-card:nth-child(1):hover { 
+     transform: translateY(-3px);
+     border-color: var(--neon-pink);
+     box-shadow: 
+          0 8px 25px rgba(234, 145, 227, 0.2),
+          0 0 15px rgba(234, 145, 227, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.world-card:nth-child(1):hover::after {
+     opacity: 1;
+     transform: scale(1.1);
+}
+.world-card:nth-child(2) { 
+     border: 2px solid #d4af37;
+     background: linear-gradient(135deg, 
+          rgba(40, 30, 20, 0.95) 0%, 
+          rgba(60, 45, 30, 0.9) 50%, 
+          rgba(80, 60, 40, 0.85) 100%);
+     position: relative;
+     overflow: hidden;
+     transition: all 0.4s ease;
+}
+.world-card:nth-child(2)::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: linear-gradient(135deg, 
+          rgba(253, 248, 128, 0.03) 0%, 
+          transparent 50%, 
+          rgba(212, 175, 55, 0.05) 100%);
+     z-index: 1;
+     border-radius: 10px;
+}
+.world-card:nth-child(2)::after {
+     content: '🐾';
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     font-size: 1.5rem;
+     z-index: 3;
+     opacity: 0.8;
+     transition: all 0.3s ease;
+}
+.world-card:nth-child(2):hover { 
+     transform: translateY(-3px);
+     border-color: var(--energetic-pop);
+     box-shadow: 
+          0 8px 25px rgba(253, 248, 128, 0.2),
+          0 0 15px rgba(212, 175, 55, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+.world-card:nth-child(2):hover::after {
+     opacity: 1;
+     transform: scale(1.2);
+}
+
+
 .world-card .button {
      display: inline-block;
      padding: 15px 30px;
@@ -1327,6 +1451,7 @@ body {
      0%, 100% { opacity: 0.3; transform: scale(0.8); }
      50% { opacity: 1; transform: scale(1.2); }
 }
+
 
 /* =========================
     RESPONSIVE & MEDIA QUERIES
