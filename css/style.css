@@ -12,7 +12,7 @@
      margin: 1.5rem auto 0 auto;
      max-width: 380px;
      border-radius: 18px;
-     box-shadow: 0 0 24px 4px #00fff7cc, 0 0 8px 2px #ff00cc99, 0 0 2px 1px #fff200cc;
+     box-shadow: 0 0 30px 6px #F6C00B, 0 0 8px 2px #9B0104, 0 0 2px 1px #fff200cc;
      background: linear-gradient(90deg, #18122b 0%, #2a1a40 100%);
      padding: 10px 10px 6px 10px;
      display: flex;
@@ -20,9 +20,9 @@
      align-items: center;
 }
 .hero-spotify-player iframe {
-     border-radius: 12px;
-     border: 2px solid #00fff7;
-     box-shadow: 0 0 12px 2px #00fff7cc, 0 0 4px 1px #ff00cc99;
+     border-radius: 10px;
+     border: 2px solid #9B0104;
+     box-shadow: 0 0 12px 2px #9B0104, 0 0 4px 1px #ff00cc99;
      background: #18122b;
 }
 
@@ -333,26 +333,6 @@ body {
      transform: translateY(-2px);
      box-shadow: 0 5px 15px rgba(204, 4, 59, 0.4);
 }
-/*
-.cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(156, 39, 176, 0.4);
-}
-.button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(204, 4, 59, 0.4);
-}
-*/
-/*
-.cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(156, 39, 176, 0.4);
-}
-.button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(204, 4, 59, 0.4);
-}
-*/
 
 /* =========================
     TWO WORLDS SECTION
@@ -1413,7 +1393,6 @@ body {
      transform: scale(1.12) rotate(-6deg);
      box-shadow: 0 0 24px var(--neon-pink);
 }
-/* Only show the correct arrows for each slide */
 #slide1:checked ~ .gallery-arrows-external #arrow-left-1,
 #slide1:checked ~ .gallery-arrows-external #arrow-right-1,
 #slide2:checked ~ .gallery-arrows-external #arrow-left-2,
@@ -1592,7 +1571,6 @@ body {
      from { opacity: 0; }
      to { opacity: 1; }
 }
-/* Show overlay when checkbox is checked */
 #fullscreen1:checked ~ .slide1 .gallery-fullscreen-overlay,
 #fullscreen2:checked ~ .slide2 .gallery-fullscreen-overlay,
 #fullscreen3:checked ~ .slide3 .gallery-fullscreen-overlay,
@@ -1658,7 +1636,6 @@ body {
      margin-top: 8px;
      text-shadow: 0 0 8px var(--purple-vibrant);
 }
-/* Show only the checked slide */
 #slide1:checked ~ .gallery-slides .slide1,
 #slide2:checked ~ .gallery-slides .slide2,
 #slide3:checked ~ .gallery-slides .slide3,
@@ -1679,7 +1656,6 @@ body {
      position: relative;
      z-index: 2;
 }
-/* Hide radio buttons */
 .gallery-slider input[type="radio"] {
      display: none;
 }
@@ -1720,7 +1696,6 @@ body {
      transform: scale(1.12) rotate(-6deg);
      box-shadow: 0 0 24px var(--neon-pink);
 }
-/* Only show the correct arrows for each slide */
 #slide1:checked ~ .gallery-arrows-overlay label[for="slide6"],
 #slide1:checked ~ .gallery-arrows-overlay label[for="slide2"],
 #slide2:checked ~ .gallery-arrows-overlay label[for="slide1"],
@@ -1764,7 +1739,9 @@ body {
     RESPONSIVE & MEDIA QUERIES
    ========================= */
 
-/* ====== 1200px ====== */
+/* ==================================================
+   1200px
+   ================================================== */
 @media (max-width: 1200px) {
      .gallery-slider, .about-story, .about-unique, .about-gallery, .about-values, .about-cta {
           max-width: 96vw;
@@ -1774,12 +1751,16 @@ body {
      .events-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* ====== 1024px ====== */
+/* ==================================================
+   1024px
+   ================================================== */
 @media (max-width: 1024px) {
      .events-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ====== 900px ====== */
+/* ==================================================
+   900px
+   ================================================== */
 @media (max-width: 900px) {
      .social-icons { display: none !important; }
      .footer-social-mobile {
@@ -1877,7 +1858,9 @@ body {
      .worlds-grid { grid-template-columns: 1fr; gap: 18px; }
 }
 
-/* ====== 800px ====== */
+/* ==================================================
+   800px
+   ================================================== */
 @media (max-width: 800px) {
      .gallery-slider, .about-story, .about-unique, .about-gallery, .about-values, .about-cta {
           max-width: 99vw;
@@ -1890,7 +1873,9 @@ body {
      }
 }
 
-/* ====== 768px ====== */
+/* ==================================================
+   768px
+   ================================================== */
 @media (max-width: 768px) {
      .header-container { flex-direction: column; gap: 15px; padding: 20px 0; }
      .main-nav ul { flex-wrap: wrap; justify-content: center; gap: 20px; }
@@ -1910,7 +1895,9 @@ body {
      .world-card p { font-size: 1rem; }
 }
 
-/* ====== 700px ====== */
+/* ==================================================
+   700px
+   ================================================== */
 @media (max-width: 700px) {
      .about-gallery-photos {
           flex-direction: column;
@@ -1925,7 +1912,9 @@ body {
      }
 }
 
-/* ====== 600px ====== */
+/* ==================================================
+   600px
+   ================================================== */
 @media (max-width: 600px) {
      .gallery-hero h1 { font-size: 2.1rem; }
      .gallery-hero p { font-size: 1.05rem; }
@@ -1961,7 +1950,9 @@ body {
      }
 }
 
-/* ====== 480px ====== */
+/* ==================================================
+   480px
+   ================================================== */
 @media (max-width: 480px) {
      .two-worlds { padding: 60px 10px; }
      .two-worlds h2 { font-size: 2rem; }
@@ -1977,7 +1968,9 @@ body {
      .event-card h3, .event-card-2 h3, .event-card-3 h3 { font-size: 1.3rem; }
 }
 
-/* ====== 375px ====== */
+/* ==================================================
+   375px
+   ================================================== */
 @media (max-width: 375px) {
      .main-header, .footer-container, .hero, .two-worlds, .next-events {
           padding-left: 1vw;
@@ -1994,7 +1987,9 @@ body {
      }
 }
 
-/* ====== 360px ====== */
+/* ==================================================
+   360px
+   ================================================== */
 @media (max-width: 360px) {
      .main-header, .footer-container, .hero, .two-worlds, .next-events {
           padding-left: 0;
@@ -2009,5 +2004,7 @@ body {
      }
 }
 
-/* ====== Hide mobile social by default ====== */
+/* ==================================================
+   Hide mobile social by default
+   ================================================== */
 .footer-social-mobile { display: none; }
