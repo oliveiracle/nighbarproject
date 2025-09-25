@@ -134,6 +134,8 @@ body {
      display: flex;
      justify-content: center;
      align-items: center;
+   
+
 }
 .header-neon-logo {
      height: 104px;
@@ -144,7 +146,7 @@ body {
      filter: none;
      background: transparent;
      display: block;
-     margin: 0 auto;
+     left: 6rem !important;
 }
 
 /* =========================
@@ -154,8 +156,10 @@ body {
      flex: 1;
      display: flex;
      justify-content: center;
+     left: 5rem !important;
 }
 .main-nav ul {
+     margin-right: 6rem !important;
      margin: 0;
      padding: 0;
      list-style: none;
@@ -165,7 +169,7 @@ body {
 .main-nav a {
      color: var(--text-light);
      text-decoration: none;
-     font-size: 16px;
+     font-size: 18px;
      font-weight: bold;
      padding-bottom: 5px;
      transition: all 0.3s ease;
@@ -178,11 +182,14 @@ body {
 
 /* =========================
     SOCIAL ICONS (HEADER & FOOTER)
-   ========================= */
+========================= */
 .social-icons {
      display: flex;
-     gap: 15px;
+     gap: 20px;
      flex: 0 0 auto;
+     margin-left: 2rem !important;
+     position: relative;
+     right: 3rem !important;
 }
 .social-icons a {
      color: var(--text-light);
@@ -873,8 +880,8 @@ body {
      gap: 8px;
 }
 .footer-logo-img {
-     width: 64px;
-     height: 64px;
+     width: 72px !important;
+     height: 72px!important;
      border-radius: 50%;
      border: 2px solid var(--purple-vibrant);
      box-shadow: 0 0 10px var(--purple-vibrant);
