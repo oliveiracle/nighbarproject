@@ -1316,6 +1316,94 @@ body {
      letter-spacing: 0.5px;
 }
 
+/* Footer Developer Credit - Neon Box Style */
+.footer-dev {
+    margin-top: 16px !important;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+}
+
+.developer-credit {
+    display: inline-block;
+    background: rgba(24, 16, 40, 0.95);
+    border: 2px solid #EA91E3;
+    border-radius: 12px;
+    padding: 12px 20px;
+    margin: 0 auto;
+    box-shadow: 
+        0 0 15px rgba(234, 145, 227, 0.4),
+        inset 0 0 15px rgba(234, 145, 227, 0.1);
+    animation: neonGlow 2s ease-in-out infinite alternate;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.developer-credit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(253, 248, 128, 0.2), transparent);
+    animation: shimmer 3s infinite;
+}
+
+.developer-credit .dev-text {
+    color: #fff;
+    font-size: 0.95em;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+.developer-credit .dev-link {
+    color: #EA91E3;
+    text-decoration: none;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(234, 145, 227, 0.6);
+    transition: all 0.3s ease;
+}
+
+.developer-credit .dev-link:hover {
+    color: #FDF880;
+    text-shadow: 0 0 12px rgba(253, 248, 128, 0.8);
+    transform: scale(1.05);
+}
+
+.developer-credit .whatsapp-link {
+    color: #FDF880;
+    text-decoration: none;
+    font-weight: 500;
+    text-shadow: 0 0 6px rgba(253, 248, 128, 0.5);
+    transition: all 0.3s ease;
+}
+
+.developer-credit .whatsapp-link:hover {
+    color: #EA91E3;
+    text-shadow: 0 0 10px rgba(234, 145, 227, 0.7);
+}
+
+@keyframes neonGlow {
+    from {
+        box-shadow: 
+            0 0 15px rgba(234, 145, 227, 0.4),
+            inset 0 0 15px rgba(234, 145, 227, 0.1);
+    }
+    to {
+        box-shadow: 
+            0 0 25px rgba(234, 145, 227, 0.6),
+            inset 0 0 20px rgba(234, 145, 227, 0.2);
+    }
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
 /* =========================
     MENU HAMBURGER (MOBILE)
    ========================= */
@@ -1893,6 +1981,15 @@ body {
      .world-card { padding: 30px 20px; min-height: 160px; }
      .world-card h3 { font-size: 1.6rem; }
      .world-card p { font-size: 1rem; }
+     
+     /* Developer Credit Mobile */
+     .developer-credit {
+          padding: 10px 16px;
+          margin: 0 10px;
+     }
+     .developer-credit .dev-text {
+          font-size: 0.9em;
+     }
 }
 
 /* ==================================================
@@ -1966,6 +2063,16 @@ body {
      .next-events { padding: 50px 15px; }
      .next-events h2 { font-size: 2rem; }
      .event-card h3, .event-card-2 h3, .event-card-3 h3 { font-size: 1.3rem; }
+     
+     /* Developer Credit Mobile Small */
+     .developer-credit {
+          padding: 8px 12px;
+          border-radius: 8px;
+     }
+     .developer-credit .dev-text {
+          font-size: 0.85em;
+          line-height: 1.4;
+     }
 }
 
 /* ==================================================
